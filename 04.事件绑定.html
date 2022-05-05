@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<div id="app">
+  <p>count的值是{{count}}</p>
+<!--  在绑定事件处理函数的时候可以通过()传递参数-->
+  <button v-on:click="add(2)">+1</button>
+<!--  v-on:可以被简写为@-->
+  <button @click="sub">-1</button>
+</div>
+
+<script src="./lib/vue-2.6.12.js"></script>
+<script>
+  const vm=new Vue({
+    el:'#app',
+    data:{
+      count:0
+    },
+    methods:{
+      add (n){
+        // vm.count+=1
+        // console.log(vm)
+        this.count+=n
+      },
+      sub (){
+        // console.log('触发了sub函数')
+        this.count-=1
+      }
+    }
+  })
+</script>
+</body>
+
+</html>

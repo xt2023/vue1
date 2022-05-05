@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+<div id="app">
+<!--  将username的值渲染到p标签中，会覆盖里面的内容-->
+  <p v-text="username">姓名</p>
+  <p v-text="gender">性别</p>
+  <hr>
+<!--  不会覆盖原本内容，最常用-->
+  <p>姓名:{{ username }}</p>
+  <p>性别:{{ gender }}</p>
+  <hr>
+  <div v-text="info"></div>
+  <div>{{ info }}</div>
+<!--  将HTML渲染出来-->
+  <div v-html="info"></div>
+</div>
+
+<script src="./lib/vue-2.6.12.js"></script>
+<script>
+  const vm=new Vue({
+    el:'#app',
+    data:{
+      username:'zhangsan',
+      gender:'女',
+      info:'<h4 style="color: red;font-weight: bold">欢迎大家学习前端</h4>'
+    }
+  })
+</script>
+</body>
+
+</html>
